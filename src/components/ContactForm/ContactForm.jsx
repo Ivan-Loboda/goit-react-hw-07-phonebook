@@ -40,12 +40,12 @@ const ContactForm = () => {
             }}
         >
             <Form className={s.form}>
-                <label htmlFor="name" className={s.label}>
+                <label htmlFor="name" >
                     Name{' '}
                 </label>
                 <Field className={s.input} type="text" name="name" placeholder="Name" />
                 <ErrorMessage name="name" />
-                <label htmlFor="number" className={s.label}>
+                <label htmlFor="number" >
                     Number{' '}
                 </label>
                 <Field
@@ -55,7 +55,7 @@ const ContactForm = () => {
                     placeholder="+7********"
                 />
                 <ErrorMessage name="number" />
-                <button type="submit" className={s.button}>
+                <button type="submit" >
                     Add contact
                 </button>
             </Form>

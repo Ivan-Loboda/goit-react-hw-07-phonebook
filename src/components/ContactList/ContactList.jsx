@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import s from './ContactList.module.css';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getVisibleContacts } from '../../redux/contacts/contacts-selectors';
@@ -12,19 +11,20 @@ function ContactList() {
     const contacts = useSelector(getVisibleContacts);
     const dispatch = useDispatch();
 
+    console.log(contacts)
+
     useEffect(() => {
         dispatch(fetchAllContacts());
     }, [dispatch]);
 
     const onDeleteContact = id => dispatch(deleteContact(id));
     return (
-        <ol className={s.contactList}>
+        <ol >
             {contacts?.map(({ name, number, id }) => (
-                <li className={s.name} key={id}>
-                    {name}: <span className={s.number}>{number}</span>
+                <li key={id}>
+                    {name}: <span >{number}</span>
                     <button
                         type="button"
-                        className={s.button}
                         onClick={() => onDeleteContact(id)}
                     >
                         Delete
